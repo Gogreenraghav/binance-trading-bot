@@ -1,0 +1,68 @@
+{
+  "name": "binance-trading-bot",
+  "version": "1.0.0",
+  "description": "Automated trading bot with Binance API and news sentiment analysis",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "docker:build": "docker build -t trading-bot .",
+    "docker:run": "docker run -d --name trading-bot trading-bot",
+    "docker:stop": "docker stop trading-bot && docker rm trading-bot",
+    "deploy:testnet": "BINANCE_TESTNET=true node src/index.js",
+    "analyze:market": "node scripts/market-analysis.js",
+    "backtest": "node scripts/backtest.js"
+  },
+  "keywords": [
+    "trading",
+    "bot",
+    "binance",
+    "crypto",
+    "automation",
+    "news",
+    "sentiment",
+    "analysis"
+  ],
+  "author": "Trading Bot Team",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "axios": "^1.3.0",
+    "ws": "^8.5.0",
+    "crypto-js": "^4.1.1",
+    "express": "^4.18.0",
+    "socket.io": "^4.5.0",
+    "chart.js": "^4.0.0",
+    "moment": "^2.29.4",
+    "winston": "^3.8.0",
+    "node-cron": "^3.0.2",
+    "technicalindicators": "^3.1.0",
+    "natural": "^6.0.0",
+    "ccxt": "^3.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nodemon": "^2.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0",
+    "supertest": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/binance-trading-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/binance-trading-bot/issues"
+  },
+  "homepage": "https://github.com/yourusername/binance-trading-bot#readme"
+}
